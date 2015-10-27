@@ -6,7 +6,7 @@ var db = require('./db');
 describe('subscribe', function () {
   var subscriber;
   beforeEach(function () {
-    subscriber = redis.createClient();
+    subscriber = redis.createClient({host: '192.168.99.100'});
   });
 
   // Sends the given messages in order to the given channel.

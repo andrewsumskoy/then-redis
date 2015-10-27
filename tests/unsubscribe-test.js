@@ -6,7 +6,7 @@ describe('when subscribed to many channels', function () {
   var channels, subscriber;
   beforeEach(function () {
     channels = [ 'abc', 'def' ];
-    subscriber = redis.createClient();
+    subscriber = redis.createClient({host: '192.168.99.100'});
     return subscriber.subscribe.apply(subscriber, channels);
   });
 
@@ -56,7 +56,7 @@ describe('when subscribed to many channels', function () {
 describe('when subscribed to no channels', function () {
   var subscriber;
   beforeEach(function () {
-    subscriber = redis.createClient();
+    subscriber = redis.createClient({host: '192.168.99.100'});
   });
 
   describe('unsubscribing from all channels', function () {

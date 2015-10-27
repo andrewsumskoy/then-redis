@@ -6,7 +6,7 @@ var db = require('./db');
 describe('monitor', function () {
   var monitor;
   beforeEach(function () {
-    monitor = redis.createClient();
+    monitor = redis.createClient({host: '192.168.99.100'});
   });
 
   describe('when monitoring the database', function () {

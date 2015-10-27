@@ -5,7 +5,7 @@ var redis = require('../index');
 describe('when returning buffers', function () {
   var db;
   beforeEach(function () {
-    db = redis.createClient({ return_buffers: true });
+    db = redis.createClient({ return_buffers: true, host: '192.168.99.100' });
   });
 
   afterEach(function () {

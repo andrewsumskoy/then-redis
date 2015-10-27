@@ -4,7 +4,7 @@ var redis = require('../index');
 describe('quit', function () {
   var quitter;
   beforeEach(function () {
-    quitter = redis.createClient();
+    quitter = redis.createClient({host: '192.168.99.100'});
   });
 
   it('emits the "end" event', function (done) {
